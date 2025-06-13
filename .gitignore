@@ -107,6 +107,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env.local
 .venv
 env/
 venv/
@@ -147,3 +148,6 @@ dmypy.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# ruff stuff
+.ruff_cache/
