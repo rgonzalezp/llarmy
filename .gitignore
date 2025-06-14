@@ -1,6 +1,10 @@
 # Cursor related
 .specstory
 .cursorindexingignore
+.cursor
+
+# Windsurf related
+.windsurf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
