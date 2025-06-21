@@ -42,7 +42,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/llarmy"
+Repository = "https://github.com/rgonzalezp/llarmy"
 
 [project.optional-dependencies]
 dev = [

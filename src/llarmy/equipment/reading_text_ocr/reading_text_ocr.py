@@ -57,7 +57,7 @@ class ReadingTextOCRToolSpec(BaseToolSpec):
 
     def general_purpose_extract_text(
         self,
-        image_path: str,
+        image_path_or_base64: str,
         lang_list: list[str],
     ) -> str:
         """
@@ -77,7 +77,7 @@ class ReadingTextOCRToolSpec(BaseToolSpec):
             if len(lang_list) == 0:
                 lang_list = ["en"]
             reader = easyocr.Reader(lang_list)
-            image = load_image_from_input(image_path)
+            image = load_image_from_input(image_path_or_base64)
             results = reader.readtext(image)
             extracted_text = " ".join([result[1] for result in results])
 
@@ -92,7 +92,7 @@ class ReadingTextOCRToolSpec(BaseToolSpec):
 
     def printed_material_extract_text(
         self,
-        image_input: str,
+        image_path_or_base64: str,
         lang: str = "eng",
     ) -> str:
         """
@@ -110,7 +110,7 @@ class ReadingTextOCRToolSpec(BaseToolSpec):
         """
         try:
             print("🔍 Extracting text using tesseract")
-            image = load_image_from_input(image_input)
+            image = load_image_from_input(image_path_or_base64)
 
             # Process with tesseract
             extracted_text = pytesseract.image_to_string(image, lang=lang)
